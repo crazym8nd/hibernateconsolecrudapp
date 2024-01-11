@@ -1,0 +1,9 @@
+
+‹
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(Á¯¦ş8‘ËûÅÏ1
+R
+java:S1068"0Remove this unused "DATABASE_URL" private field.(û­â—ÿÿÿÿÿ8’ËûÅÏ1
+E
+java:S1068"(Remove this unused "USER" private field.(ŞºìØ8’ËûÅÏ1
+N
+java:S1068",Remove this unused "PASSWORD" private field.(Ğí¤Èÿÿÿÿÿ8’ËûÅÏ1
