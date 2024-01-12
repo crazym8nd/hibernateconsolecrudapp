@@ -1,10 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-Q
-!src/test/java/bynome/AppTest.java,0\4\04ce97555021b7989ecfd0d0c0a0746c267b2521
-Q
-!src/main/java/com/vitaly/App.java,d\3\d3f7138f2cfa23cf4fdb86eb9e4cc81085fb8be8
 p
 @src/main/java/com/vitaly/hibernatepostgrescrudapp/AppRunner.java,0\6\0660d75df1da52ca4e3113823ef9f1b49826c401
 r
@@ -27,16 +23,10 @@ s
 Csrc/main/java/com/vitaly/hibernatepostgrescrudapp/dao/LabelDao.java,5\7\577b2f50aacd33b6701827aeb3e6e1a6b517c60f
 Å
 Q.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,2\c\2cabb939da04d3de3a200bf2b575690e1a16316d
-w
-G.idea/sonarlint/issuestore/d/3/d3f7138f2cfa23cf4fdb86eb9e4cc81085fb8be8,7\9\7911a3e29cd66b6a7c84d172f2343d6b98954181
-w
-G.idea/sonarlint/issuestore/0/4/04ce97555021b7989ecfd0d0c0a0746c267b2521,6\3\6342b910cc2d967281a435ebd4d31c03953deb0b
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
-Å
-Q.idea/sonarlint/securityhotspotstore/0/4/04ce97555021b7989ecfd0d0c0a0746c267b2521,e\a\ea82cedf882be7b7a1024b3757d58a57d5cbe0e6
 w
 G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
 :
@@ -44,8 +34,6 @@ G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\86
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 Å
 Q.idea/sonarlint/securityhotspotstore/e/b/eb6a43b35ed267202bc403e1d91774494f1f591d,b\6\b6e4fcab5e8add15102ecf948cd379fbb5c3139a
-Å
-Q.idea/sonarlint/securityhotspotstore/d/3/d3f7138f2cfa23cf4fdb86eb9e4cc81085fb8be8,d\1\d108b9b072f7e06ba607258889e44dad42f46c0e
 Å
 Q.idea/sonarlint/securityhotspotstore/0/6/0660d75df1da52ca4e3113823ef9f1b49826c401,9\4\947e924fc4d55c8231000c3f4ed530add1110d8c
 w

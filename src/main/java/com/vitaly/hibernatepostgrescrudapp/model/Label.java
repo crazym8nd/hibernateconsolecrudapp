@@ -1,14 +1,12 @@
 package com.vitaly.hibernatepostgrescrudapp.model;
 //  11-Jan-24
 // gh crazym8nd
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "labels")
 public class Label {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -16,10 +14,16 @@ public class Label {
     private String name;
 
     @Column(name = "status")
+    @jakarta.persistence.Enumerated(jakarta.persistence.EnumType.STRING)
     private Status status;
 
     public Label() {}
     public Label(String name, Status status) {
+        this.name = name;
+        this.status = status;
+    }
+    public Label(Integer id, String name, Status status) {
+        this.id = id;
         this.name = name;
         this.status = status;
     }

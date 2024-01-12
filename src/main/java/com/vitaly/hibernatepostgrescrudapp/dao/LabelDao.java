@@ -1,6 +1,7 @@
 package com.vitaly.hibernatepostgrescrudapp.dao;
 //  11-Jan-24
 // gh crazym8nd
+import java.util.Collections;
 import java.util.List;
 
 import com.vitaly.hibernatepostgrescrudapp.model.Label;
@@ -11,25 +12,12 @@ import org.hibernate.Session;
 public class LabelDao {
 
     public List<Label> getLabels()
-
     {
-        List<Label> labels = null;
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-
-            session.beginTransaction();
-            labels = session.createQuery("from Label", Label.class).list();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            return session.createQuery("FROM Label", Label.class).list();
         } catch (Exception e) {
-            if (session.getTransaction() != null) {
-                session.getTransaction().rollback();
-            }
-        } finally {
-            if (session != null) {
-                session.close();
-            }
+            return Collections.emptyList();
         }
-        return labels;
     }
 
     public Label getLabel(Integer label_id) {
