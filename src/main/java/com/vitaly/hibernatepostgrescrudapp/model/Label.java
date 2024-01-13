@@ -52,4 +52,9 @@ public class Label {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Label "+ id +" ("+ name + "," + status + ')';
+    }
 }

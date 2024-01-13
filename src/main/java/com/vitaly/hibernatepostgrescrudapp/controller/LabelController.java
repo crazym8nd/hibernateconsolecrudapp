@@ -3,5 +3,27 @@ package com.vitaly.hibernatepostgrescrudapp.controller;
 // gh crazym8nd
 
 
+import com.vitaly.hibernatepostgrescrudapp.model.Label;
+import com.vitaly.hibernatepostgrescrudapp.service.LabelService;
+
+import java.util.List;
+
 public class LabelController {
+    private final LabelService labelService = new LabelService();
+
+    public Label createlabel(Label label) {
+        return labelService.saveLabel(label);
+    }
+    public List<Label> getLabels() {
+        return labelService.getLabels();
+    }
+    public Label getLabel(Integer label_id) {
+        return labelService.getLabel(label_id);
+    }
+    public Label updateLabel(Label label) {
+        return labelService.update(label);
+    }
+    public void deleteById(Integer integer) {
+        labelService.deleteById(integer);
+    }
 }

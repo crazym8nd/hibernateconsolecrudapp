@@ -4,14 +4,20 @@ package com.vitaly.hibernatepostgrescrudapp;
  gh crazym8nd
 */
 
+import com.vitaly.hibernatepostgrescrudapp.view.MainView;
 
 import java.sql.*;
-import java.util.List;
+
 
 public class AppRunner {
 
     public static void main(String[] args) throws SQLException {
+//        MainView mainView = new MainView();
+//        mainView.start();
         System.out.println("Hello World!");
+
+
+
 
         System.out.println("END");
 

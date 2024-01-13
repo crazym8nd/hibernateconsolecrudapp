@@ -40,3 +40,13 @@ w
 G.idea/sonarlint/issuestore/8/6/86baee881b506a3f0d8e557c35eeec9d5a6afcef,1\6\160eaaf12be40a3eea3b2adca53d1d8c0ec680d7
 Å
 Q.idea/sonarlint/securityhotspotstore/8/6/86baee881b506a3f0d8e557c35eeec9d5a6afcef,f\5\f52f7c27c9e4029f4003012ebef8c7de46974b3b
+x
+Hsrc/main/java/com/vitaly/hibernatepostgrescrudapp/view/AbstractView.java,4\7\478060b323753547076cc3d49911720b9caf4f00
+q
+Asrc/main/java/com/vitaly/hibernatepostgrescrudapp/model/Post.java,4\6\46a117f0799cedfacf2ea4f0c941621f52a78d16
+w
+Gsrc/main/java/com/vitaly/hibernatepostgrescrudapp/model/PostStatus.java,d\f\df3976d2238a6216447f5a87b5319ae8ef511e72
+r
+Bsrc/main/java/com/vitaly/hibernatepostgrescrudapp/dao/PostDao.java,6\2\6299af62c39945ec4954d119dae3e6abfdf3edf4
+s
+Csrc/main/java/com/vitaly/hibernatepostgrescrudapp/model/Writer.java,b\0\b05ca67416b3a09685bd895e22c858c3a73a02f7
