@@ -3,6 +3,8 @@ package com.vitaly.hibernatepostgrescrudapp.utils;
 // gh crazym8nd
 
 import com.vitaly.hibernatepostgrescrudapp.model.Label;
+import com.vitaly.hibernatepostgrescrudapp.model.Post;
+import com.vitaly.hibernatepostgrescrudapp.model.Writer;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -20,6 +22,8 @@ public class HibernateUtil {
                 sessionFactory =
                         new MetadataSources(registry)
                                 .addAnnotatedClass(Label.class)
+                                .addAnnotatedClass(Post.class)
+                                .addAnnotatedClass(Writer.class)
                                 .buildMetadata()
                                 .buildSessionFactory();
             }

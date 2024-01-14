@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 public class MainView {
     private final AbstractView labelView = new LabelView();
+    private final AbstractView postView = new PostView();
+    private final AbstractView writerView = new WriterView();
+
 
     private static final String MENU = "Main menu. Choose option:\n" +
             "1. Work with labels\n" +
@@ -25,13 +28,13 @@ public class MainView {
                         labelView.show();
                         break;
 
-//                    case "2":
-//                        postView.show();
-//                        break;
-//
-//                    case "3": writerView.show();
-//                        break;
-//
+                    case "2":
+                        postView.show();
+                        break;
+
+                    case "3": writerView.show();
+                        break;
+
                     case "4":
                         isExit = true;
                         break;

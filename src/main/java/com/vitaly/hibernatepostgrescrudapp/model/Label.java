@@ -2,7 +2,15 @@ package com.vitaly.hibernatepostgrescrudapp.model;
 //  11-Jan-24
 // gh crazym8nd
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "labels")
 public class Label {
@@ -17,39 +25,8 @@ public class Label {
     @jakarta.persistence.Enumerated(jakarta.persistence.EnumType.STRING)
     private Status status;
 
-    public Label() {}
     public Label(String name, Status status) {
         this.name = name;
-        this.status = status;
-    }
-    public Label(Integer id, String name, Status status) {
-        this.id = id;
-        this.name = name;
-        this.status = status;
-    }
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
         this.status = status;
     }
 

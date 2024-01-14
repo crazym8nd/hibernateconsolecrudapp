@@ -12,14 +12,9 @@ import java.sql.*;
 public class AppRunner {
 
     public static void main(String[] args) throws SQLException {
-//        MainView mainView = new MainView();
-//        mainView.start();
-        System.out.println("Hello World!");
+        MainView mainView = new MainView();
+        mainView.start();
 
-
-
-
-        System.out.println("END");
 
     }
 }

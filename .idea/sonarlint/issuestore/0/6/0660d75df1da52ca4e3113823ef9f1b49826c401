@@ -1,6 +1,3 @@
 
 ‹
 java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(Á¯¦þ8—¥²‘Ð1
-]	java:S125"<This block of commented-out lines of code should be removed.(¾²ÔÛýÿÿÿÿ8Œ—Œ•Ð1
-p
-java:S1128"NRemove this unused import 'com.vitaly.hibernatepostgrescrudapp.view.MainView'.(œ¦Äÿÿÿÿÿ8Œ—Œ•Ð1

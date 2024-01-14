@@ -14,7 +14,7 @@ public class LabelView extends AbstractView {
     private final LabelController labelController = new LabelController();
     private final Scanner scanner = getScanner();
     private static final String PRINT_LABEL_LIST = "List of labels:\n";
-    private static final String CREATE_LABEL_MSG = "Create label.\n" + "Enter label name: ";
+    private static final String CREATE_LABEL_MSG = "Creating label.\n" + "Enter label name: ";
     private static final String EDIT_LABEL_MSG = "Enter ID of label to edit:";
     private static final String DELETE_LABEL_MSG = "Enter ID of label to delete: ";
 
@@ -24,7 +24,7 @@ public class LabelView extends AbstractView {
                 "2 - Update label\n" +
                 "3 - Delete label\n" +
                 "4 - Read labels\n" +
-                "5 - Exit label\n" +
+                "5 - Exit label menu\n" +
                 "Enter your choice: ");
     }
 

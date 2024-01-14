@@ -22,8 +22,8 @@ public class LabelService {
     public List<Label> getLabels() {
         return labelDao.getLabels();
     }
-    public Label getLabel(Integer label_id) {
-        return labelDao.getLabelById(label_id);
+    public Label getLabel(Integer labelId) {
+        return labelDao.getLabelById(labelId);
     }
     public Label saveLabel(Label label) {
         return labelDao.saveLabel(label);

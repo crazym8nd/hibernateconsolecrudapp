@@ -17,8 +17,8 @@ public class LabelController {
     public List<Label> getLabels() {
         return labelService.getLabels();
     }
-    public Label getLabel(Integer label_id) {
-        return labelService.getLabel(label_id);
+    public Label getLabel(Integer labelId) {
+        return labelService.getLabel(labelId);
     }
     public Label updateLabel(Label label) {
         return labelService.update(label);

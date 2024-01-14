@@ -2,11 +2,17 @@ package com.vitaly.hibernatepostgrescrudapp.model;
 //  13-Jan-24
 // gh crazym8nd
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "posts")
 public class Post {
@@ -27,7 +33,7 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private PostStatus postStatus;
 
-   @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
    @JoinTable(name ="post_labels",
               joinColumns = @JoinColumn(name = "post_id"),
               inverseJoinColumns = @JoinColumn(name = "label_id"))
@@ -35,4 +41,23 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Writer writer;
+
+    public Post(String created, String updated, PostStatus postStatus, List<Label> postLabels){
+        this.created = created;
+        this.updated = updated;
+        this.postStatus = postStatus;
+        this.postLabels = postLabels;
+    }
+
+    @Override
+    public String toString() {
+        return "Post "+ id +
+                " (content " + content +
+                ", created: " + created +
+                ", updated: " + updated +
+                ", postStatus: " + postStatus +
+                ", postLabels: " + postLabels +
+                ", writer: " + writer;
+    }
+
 }

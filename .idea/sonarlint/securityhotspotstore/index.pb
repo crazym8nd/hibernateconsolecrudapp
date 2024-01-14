@@ -50,3 +50,17 @@ r
 Bsrc/main/java/com/vitaly/hibernatepostgrescrudapp/dao/PostDao.java,6\2\6299af62c39945ec4954d119dae3e6abfdf3edf4
 s
 Csrc/main/java/com/vitaly/hibernatepostgrescrudapp/model/Writer.java,b\0\b05ca67416b3a09685bd895e22c858c3a73a02f7
+z
+Jsrc/main/java/com/vitaly/hibernatepostgrescrudapp/service/PostService.java,5\f\5f5af9d78117db7e885d4e1334a532138b0d001a
+€
+Psrc/main/java/com/vitaly/hibernatepostgrescrudapp/controller/PostController.java,9\c\9c836c787972b7a9beaac55f0bdc0e636245d143
+t
+Dsrc/main/java/com/vitaly/hibernatepostgrescrudapp/view/PostView.java,3\9\399846dfdbfc78f1fdc1e16661eda7da35d8a107
+‚
+Rsrc/main/java/com/vitaly/hibernatepostgrescrudapp/controller/WriterController.java,1\7\173ae9cf6feab053f06d4c1384efdf3961e23bff
+|
+Lsrc/main/java/com/vitaly/hibernatepostgrescrudapp/service/WriterService.java,2\2\222b1a2ea2675f55c2d7994cb711b2db9ab7af4e
+t
+Dsrc/main/java/com/vitaly/hibernatepostgrescrudapp/dao/WriterDao.java,6\8\684641bda53716b75b55fa7174bdb520aae774b2
+v
+Fsrc/main/java/com/vitaly/hibernatepostgrescrudapp/view/WriterView.java,2\e\2ed08b7b1aee7c2be23e51b7ef1ae639829e062c
