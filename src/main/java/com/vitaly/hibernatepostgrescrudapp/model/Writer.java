@@ -44,12 +44,8 @@ public class Writer {
 
     @Override
     public String toString() {
-        return "Writer{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", writerPosts=" + writerPosts +
-                ", status=" + status +
-                '}';
+        return "Writer " + id +
+                ", " + firstName +" "+ lastName +
+                ", Posts: " + writerPosts;
     }
 }

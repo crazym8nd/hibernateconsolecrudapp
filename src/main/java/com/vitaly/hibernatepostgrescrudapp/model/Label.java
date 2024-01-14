@@ -31,10 +31,7 @@ public class Label {
 
     @Override
     public String toString() {
-        return "Label{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", status=" + status +
-                '}';
+        return "Label " + id +
+                ", name: " + name;
     }
 }

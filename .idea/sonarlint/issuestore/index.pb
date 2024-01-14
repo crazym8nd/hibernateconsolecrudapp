@@ -72,3 +72,9 @@ W
 'src/main/resources/hibernate.properties,a\c\ac770fe9478d530a77fce01d5082e3ea043e98d7
 
 Osrc/test/java/com/vitaly/hibernatepostgrescrudapp/service/LabelServiceTest.java,4\e\4ec25875177f048b69a5e2c16150a88bdab72e6b
+~
+Nsrc/test/java/com/vitaly/hibernatepostgrescrudapp/service/PostServiceTest.java,d\2\d261db154e5d4a1c80a8f5a60c5932d886132458
+€
+Psrc/test/java/com/vitaly/hibernatepostgrescrudapp/service/WriterServiceTest.java,a\3\a306ec4dea996c1e14d4ee4b800ae74baeb820b4
+g
+7src/main/resources/db/migration/V1__add_sample_data.sql,1\0\106f8c449165b40444a5e263ce21eff6daeb00dc

@@ -64,7 +64,7 @@ public class PostDao {
 
     public void deleteById(Integer postId){
         Post post = getPostById(postId);
-        if(post.getPostStatus() != null && post.getPostStatus() != PostStatus.DELETED){
+        if(post.getPostStatus() != PostStatus.DELETED){
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 session.beginTransaction();
                 post.setPostStatus(PostStatus.DELETED);

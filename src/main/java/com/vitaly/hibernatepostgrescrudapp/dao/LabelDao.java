@@ -58,7 +58,9 @@ public class LabelDao {
         }
     }
     public void deleteById(Integer integer){
-        if(getLabelById(integer).getStatus() != null && getLabelById(integer).getStatus() != Status.DELETED){
+
+        getLabelById(integer);
+        if(getLabelById(integer).getStatus() != Status.DELETED){
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 session.beginTransaction();
                 Label label = session.get(Label.class, integer);

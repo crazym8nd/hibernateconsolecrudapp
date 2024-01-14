@@ -4,9 +4,9 @@ import com.vitaly.hibernatepostgrescrudapp.dao.LabelDao;
 import com.vitaly.hibernatepostgrescrudapp.model.Label;
 import com.vitaly.hibernatepostgrescrudapp.model.Status;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,49 +15,87 @@ import static org.mockito.Mockito.*;
 // gh crazym8nd
 
 class LabelServiceTest {
+    private final LabelDao labelDaoMock = mock(LabelDao.class);
 
+    private final LabelService labelService = new LabelService(labelDaoMock);
+    private final List<Label> mockList = Arrays.asList(new Label(1, "label1", Status.ACTIVE),
+                new Label(2, "label2", Status.ACTIVE),
+                new Label(3, "label3", Status.ACTIVE));
+    private Label mockLabel = mockList.get(0);
+
+    //happy scenario
     @Test
-    public void test_getLabels() {
-        LabelDao labelDao = mock(LabelDao.class);
-        List<Label> expectedLabels = new ArrayList<>();
-        expectedLabels.add(new Label(1, "Label 1", Status.ACTIVE));
-        expectedLabels.add(new Label(2, "Label 2", Status.ACTIVE));
-        when(labelDao.getLabels()).thenReturn(expectedLabels);
-        LabelService labelService = new LabelService(labelDao);
-
-        List<Label> actualLabels = labelService.getLabels();
-
-        assertEquals(expectedLabels, actualLabels);
+    void test_getLabelsSuccess() {
+        when(labelDaoMock.getLabels()).thenReturn(mockList);
+        assertEquals(mockList, labelService.getLabels());
     }
 
     @Test
-    public void test_getLabelById() {
-
-        LabelDao labelDao = mock(LabelDao.class);
-        LabelService labelService = new LabelService(labelDao);
-        Integer labelId = 1;
-        Label expectedLabel = new Label(labelId, "Test Label", Status.ACTIVE);
-        when(labelDao.getLabelById(labelId)).thenReturn(expectedLabel);
-
-        Label actualLabel = labelService.getLabel(labelId);
-
-
-        assertEquals(expectedLabel, actualLabel);
-        Mockito.verify(labelDao, times(1)).getLabelById(labelId);
+    void getByIdTestSuccess() {
+        when(labelDaoMock.getLabelById(1)).thenReturn(mockList.get(0));
+        assertEquals(mockLabel, labelService.getLabel(1));
     }
 
 
 
     @Test
-    public void test_saveLabel() {
+    void test_saveLabelSuccess() {
+        when(labelDaoMock.saveLabel(mockLabel)).thenReturn(mockLabel);
+        assertEquals(mockLabel, labelService.saveLabel(mockLabel));
+        verify(labelDaoMock, times(1)).saveLabel(mockLabel);
+    }
+
+
+    @Test
+    void test_updateExistingLabelSuccess() {
+        labelService.update(mockLabel);
+        verify(labelDaoMock, times(1)).update(mockLabel);
     }
 
     @Test
-    public void test_updateExistingLabel() {
+    void deleteByIdSuccess() {
+        labelService.deleteById(1);
+        verify(labelDaoMock, times(1)).deleteById(1);
+    }
+
+    // negative scenario
+    @Test
+    void test_getLabelsNeg() {
+        when(labelDaoMock.getLabels()).thenReturn(new ArrayList<>());
+        List<Label> labels = labelService.getLabels();
+        assertTrue(labels.isEmpty());
+    }
+
+    @Test
+    void getByIdTestNeg() {
+        int invalidId = 99;
+        when(labelDaoMock.getLabelById(invalidId)).thenReturn(null);
+        Label result = labelService.getLabel(invalidId);
+        assertNull(result);
+    }
+
+
+
+    @Test
+    void test_saveLabelNeg() {
+        mockLabel = null;
+        Label result = labelService.saveLabel(mockLabel);
+        assertNull(result);
+    }
+
+
+    @Test
+    void test_updateExistingLabelNeg() {
+        mockLabel = null;
+        Label result = labelService.update(mockLabel);
+        assertNull(result);
 
     }
 
     @Test
-    void deleteById() {
+    void deleteByIdNeg() {
+        int invalidId = 99;
+        labelService.deleteById(invalidId);
+        verify(labelDaoMock, times(1)).deleteById(invalidId);
     }
 }
