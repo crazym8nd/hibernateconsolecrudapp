@@ -8,7 +8,8 @@ CREATE TABLE posts(
                       content  TEXT,
                       created  TEXT,
                       updated  TEXT,
-                      post_status TEXT
+                      post_status TEXT,
+                      writer_id int
 );
 CREATE TABLE writers(
                         id       int GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
