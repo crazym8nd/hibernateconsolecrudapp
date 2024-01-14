@@ -3,7 +3,6 @@ package com.vitaly.hibernatepostgrescrudapp.controller;
 // gh crazym8nd
 
 
-import com.vitaly.hibernatepostgrescrudapp.model.Post;
 import com.vitaly.hibernatepostgrescrudapp.model.Writer;
 import com.vitaly.hibernatepostgrescrudapp.service.WriterService;
 

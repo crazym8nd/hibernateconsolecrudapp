@@ -20,10 +20,10 @@ CREATE TABLE writer_posts(
                             writer_id int NOT NULL,
                             post_id int NOT NULL,
                             constraint writer_posts_writer_fk
-                            foreign key (writer_id) references public.writers,
+                            foreign key (writer_id) references writers,
 
                             constraint writer_posts_posts__fk
-                            foreign key (post_id) references public.posts,
+                            foreign key (post_id) references posts,
 
                             constraint writer_posts_pk
                             unique (post_id, writer_id)
@@ -32,10 +32,10 @@ CREATE TABLE post_labels(
                             post_id int NOT NULL,
                             label_id int NOT NULL,
                             constraint post_labels_post_fk
-                            foreign key (post_id) references public.posts,
+                            foreign key (post_id) references posts,
 
                             constraint post_labels_labels_fk
-                            foreign key (label_id) references public.labels,
+                            foreign key (label_id) references labels,
 
                             constraint post_labels_pk
                             unique (post_id, label_id)

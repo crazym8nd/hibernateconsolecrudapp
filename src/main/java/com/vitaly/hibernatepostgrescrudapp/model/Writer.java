@@ -4,14 +4,13 @@ package com.vitaly.hibernatepostgrescrudapp.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -43,13 +42,14 @@ public class Writer {
         this.status = status;
     }
 
-
     @Override
     public String toString() {
-        return "Writer "+ id +
-                ", " + firstName +
-                ", " + lastName +
-                ", writerPosts: " + writerPosts +
-                ", status: " + status;
+        return "Writer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", writerPosts=" + writerPosts +
+                ", status=" + status +
+                '}';
     }
 }

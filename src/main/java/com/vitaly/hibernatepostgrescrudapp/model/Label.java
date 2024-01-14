@@ -2,13 +2,11 @@ package com.vitaly.hibernatepostgrescrudapp.model;
 //  11-Jan-24
 // gh crazym8nd
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -22,7 +20,8 @@ public class Label {
     private String name;
 
     @Column(name = "status")
-    @jakarta.persistence.Enumerated(jakarta.persistence.EnumType.STRING)
+    @NonNull
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public Label(String name, Status status) {
@@ -32,6 +31,10 @@ public class Label {
 
     @Override
     public String toString() {
-        return "Label "+ id +" ("+ name + "," + status + ')';
+        return "Label{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                '}';
     }
 }

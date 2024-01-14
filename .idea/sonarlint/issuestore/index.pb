@@ -64,3 +64,11 @@ t
 Dsrc/main/java/com/vitaly/hibernatepostgrescrudapp/dao/WriterDao.java,6\8\684641bda53716b75b55fa7174bdb520aae774b2
 v
 Fsrc/main/java/com/vitaly/hibernatepostgrescrudapp/view/WriterView.java,2\e\2ed08b7b1aee7c2be23e51b7ef1ae639829e062c
+R
+"src/main/resources/PostgreSQL.conf,7\f\7f6651b9326577d7e6bacb14d1764f8074bb17cf
+`
+0src/main/resources/db/migration/V0__setup_db.sql,7\7\7753dfc85efcaabfd9a57a051b11d00f18cef962
+W
+'src/main/resources/hibernate.properties,a\c\ac770fe9478d530a77fce01d5082e3ea043e98d7
+
+Osrc/test/java/com/vitaly/hibernatepostgrescrudapp/service/LabelServiceTest.java,4\e\4ec25875177f048b69a5e2c16150a88bdab72e6b

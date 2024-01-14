@@ -1,21 +1,21 @@
 package com.vitaly.hibernatepostgrescrudapp.model;
 //  13-Jan-24
-// gh crazym8nd
+// gh razym8nd
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Type;
+import lombok.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "posts")
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -31,6 +31,7 @@ public class Post {
 
     @Column(name = "post_status")
     @Enumerated(EnumType.STRING)
+    @NonNull
     private PostStatus postStatus;
 
    @ManyToMany(fetch = FetchType.EAGER)
@@ -40,24 +41,26 @@ public class Post {
     private List<Label> postLabels = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "writer_id")
     private Writer writer;
 
-    public Post(String created, String updated, PostStatus postStatus, List<Label> postLabels){
+    public Post(String created, String updated, PostStatus postStatus, List<Label> postLabels, Writer writer){
         this.created = created;
         this.updated = updated;
         this.postStatus = postStatus;
         this.postLabels = postLabels;
+        this.writer = writer;
     }
 
     @Override
     public String toString() {
-        return "Post "+ id +
-                " (content " + content +
-                ", created: " + created +
-                ", updated: " + updated +
-                ", postStatus: " + postStatus +
-                ", postLabels: " + postLabels +
-                ", writer: " + writer;
+        return "Post{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                ", created='" + created + '\'' +
+                ", updated='" + updated + '\'' +
+                ", postStatus=" + postStatus +
+                ", postLabels=" + postLabels +
+                '}';
     }
-
 }

@@ -3,8 +3,7 @@ package com.vitaly.hibernatepostgrescrudapp.dao;
 // gh crazym8nd
 
 
-import com.vitaly.hibernatepostgrescrudapp.model.Post;
-import com.vitaly.hibernatepostgrescrudapp.model.PostStatus;
+
 import com.vitaly.hibernatepostgrescrudapp.model.Status;
 import com.vitaly.hibernatepostgrescrudapp.model.Writer;
 import com.vitaly.hibernatepostgrescrudapp.utils.HibernateUtil;

@@ -15,7 +15,7 @@ public class PostDao {
 
     public List<Post> getPosts() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Post WHERE post_status = :status", Post.class)
+            return session.createQuery("FROM Post WHERE postStatus = :status", Post.class)
                     .setParameter("status", PostStatus.ACTIVE)
                     .list();
         } catch (Exception e) {

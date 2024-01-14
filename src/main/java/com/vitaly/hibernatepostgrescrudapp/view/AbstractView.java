@@ -3,22 +3,22 @@ package com.vitaly.hibernatepostgrescrudapp.view;
 // gh crazym8nd
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Scanner;
 
+@Setter
 public abstract class AbstractView {
+    @Getter
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static Scanner getScanner(){
-        return scanner;
-    }
     private String TitleMenu;
 
-    public AbstractView(String TitleMenu){
+    protected AbstractView(String TitleMenu){
         this.TitleMenu = TitleMenu;
     }
-    public void setTitleMenu (String TitleMenu){
-        this.TitleMenu = TitleMenu;
-    }
+
     public void show(){
         boolean isExit = false;
         do {

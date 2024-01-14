@@ -6,10 +6,9 @@ package com.vitaly.hibernatepostgrescrudapp;
 
 import com.vitaly.hibernatepostgrescrudapp.view.MainView;
 
-import java.sql.*;
 
-
-public class AppRunner {
+public class
+AppRunner {
 
     public static void main(String[] args) {
         MainView mainView = new MainView();

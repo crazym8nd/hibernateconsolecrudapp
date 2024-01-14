@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__add_sample_data.sql" dialect="PostgreSQL" />
     <file url="PROJECT" dialect="PostgreSQL" />
+  </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__add_sample_data.sql" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;4d33730a-402a-4ec0-bea5-d2ed997ba836&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;database&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;hibernateconsolecrud&quot;      },      &quot;group&quot;:{       &quot;@kind&quot;:&quot;schema&quot;,       &quot;node&quot;:{        &quot;name&quot;:{         &quot;@qname&quot;:&quot;public&quot;        }       }      }     }    }   }  } }}" />
+    <file url="PROJECT" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;4d33730a-402a-4ec0-bea5-d2ed997ba836&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;database&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;hibernateconsolecrud&quot;      },      &quot;group&quot;:{       &quot;@kind&quot;:&quot;schema&quot;,       &quot;node&quot;:{        &quot;name&quot;:{         &quot;@qname&quot;:&quot;public&quot;        }       }      }     }    }   }  } }}" />
   </component>
 </project>

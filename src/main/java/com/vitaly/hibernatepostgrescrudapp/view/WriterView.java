@@ -4,7 +4,6 @@ package com.vitaly.hibernatepostgrescrudapp.view;
 
 
 import com.vitaly.hibernatepostgrescrudapp.controller.WriterController;
-import com.vitaly.hibernatepostgrescrudapp.model.Post;
 import com.vitaly.hibernatepostgrescrudapp.model.Status;
 import com.vitaly.hibernatepostgrescrudapp.model.Writer;
 
