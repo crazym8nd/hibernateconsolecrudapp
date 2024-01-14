@@ -33,7 +33,7 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private PostStatus postStatus;
 
-   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+   @ManyToMany(fetch = FetchType.EAGER)
    @JoinTable(name ="post_labels",
               joinColumns = @JoinColumn(name = "post_id"),
               inverseJoinColumns = @JoinColumn(name = "label_id"))

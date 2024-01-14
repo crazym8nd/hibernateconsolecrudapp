@@ -12,9 +12,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class PostDao {
+
     public List<Post> getPosts() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Post WHERE post_status = " + PostStatus.ACTIVE, Post.class).list();
+            return session.createQuery("FROM Post WHERE post_status = :status", Post.class)
+                    .setParameter("status", PostStatus.ACTIVE)
+                    .list();
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -24,12 +27,14 @@ public class PostDao {
         Post post;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
-            post = (Post) session.createQuery("FROM Post WHERE id =" + postId).list().get(0);
+            post = (Post) session.createQuery("FROM Post WHERE id = :id")
+                    .setParameter("id", postId)
+                    .list().get(0);
         }
         if(post != null){
             return post;
         } else {
-            return new Post(-1, "NO SUCH POST","","",null, null, null);
+            throw new IllegalArgumentException("Post not found");
         }
     }
 
@@ -58,10 +63,10 @@ public class PostDao {
     }
 
     public void deleteById(Integer postId){
-        if(getPostById(postId).getPostStatus() != null && getPostById(postId).getPostStatus() != PostStatus.DELETED){
+        Post post = getPostById(postId);
+        if(post.getPostStatus() != null && post.getPostStatus() != PostStatus.DELETED){
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 session.beginTransaction();
-                Post post = session.get(Post.class, postId);
                 post.setPostStatus(PostStatus.DELETED);
                 session.merge(post);
                 session.getTransaction().commit();

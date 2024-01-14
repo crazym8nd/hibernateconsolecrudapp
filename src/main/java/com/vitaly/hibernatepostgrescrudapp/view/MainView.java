@@ -9,6 +9,7 @@ public class MainView {
     private final AbstractView labelView = new LabelView();
     private final AbstractView postView = new PostView();
     private final AbstractView writerView = new WriterView();
+    private final Scanner scanner = new Scanner(System.in);
 
 
     private static final String MENU = "Main menu. Choose option:\n" +
@@ -17,9 +18,8 @@ public class MainView {
             "3. Work with writers\n" +
             "4. Exit\n";
     public void start() {
-        try(Scanner scanner = new Scanner(System.in)) {
+        try(scanner) {
 
-            boolean isExit = false;
             do {
                 System.out.println(MENU);
                 String selectedOption = scanner.nextLine();
@@ -36,14 +36,14 @@ public class MainView {
                         break;
 
                     case "4":
-                        isExit = true;
+                        System.exit(1);
                         break;
 
                     default:
                         System.out.println("Choose correct option");
                         break;
                 }
-            } while (!isExit);
+            } while (true);
         }
     }
 }
