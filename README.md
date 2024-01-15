@@ -1,24 +1,18 @@
-Задание:
-Необходимо реализовать консольное CRUD приложение, которое взаимодействует с БД и позволяет выполнять все CRUD операции над сущностями:
+Задание:<br>
+Необходимо реализовать консольное CRUD приложение, которое взаимодействует с БД и позволяет выполнять все CRUD операции над сущностями:<br>
+Writer (id, firstName, lastName, List<Post> posts)<br>
+Post (id, content, created, updated, List<Label> labels)<br>
+Label (id, name)<br>
+PostStatus (enum ACTIVE, UNDER_REVIEW, DELETED)<br>
+Технологии: Java, PostgreSQL, Hibernate, Flyway, Maven.<br>
 
-Writer (id, firstName, lastName, List<Post> posts)
+Для того,чтобы ознакомиться с проектом,вам понадобится:<br>
+-JAVA 17<br>
+-POSTGRES 15<br>
 
-Post (id, content, created, updated, List<Label> labels)
-
-Label (id, name)
-
-PostStatus (enum ACTIVE, UNDER_REVIEW, DELETED)
-
-Технологии: Java, PostgreSQL, Hibernate, Flyway, Maven.
-
-
-Для того,чтобы ознакомиться с проектом,вам понадобится:
--JAVA 17
--POSTGRES 15
-
-1.Скачиваем или клонируем репозиторий.
-2.Устанавливаем проект с помощью Maven
-3.Выполняем migration из раздела Plugins/flyway
-4.Запускаем процесс main из AppRunner
+1.Скачиваем или клонируем репозиторий.<br>
+2.Устанавливаем проект с помощью Maven<br>
+3.Выполняем migration из раздела Plugins/flyway<br>
+4.Запускаем процесс main из AppRunner<br>
 
 
