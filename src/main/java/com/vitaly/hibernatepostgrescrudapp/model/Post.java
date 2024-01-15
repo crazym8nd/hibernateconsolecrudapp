@@ -3,6 +3,7 @@ package com.vitaly.hibernatepostgrescrudapp.model;
 // gh razym8nd
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.FetchProfile;
 
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class Post {
     @NonNull
     private PostStatus postStatus;
 
-   @ManyToMany(fetch = FetchType.LAZY)
+   @ManyToMany(cascade =CascadeType.ALL, fetch= FetchType.LAZY)
    @JoinTable(name ="post_labels",
               joinColumns = @JoinColumn(name = "post_id"),
               inverseJoinColumns = @JoinColumn(name = "label_id"))

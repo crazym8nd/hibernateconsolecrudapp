@@ -14,7 +14,9 @@ public class LabelDao {
 
     public List<Label> getLabels() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Label WHERE status = "+ Status.ACTIVE, Label.class).list();
+            return session.createQuery("FROM Label WHERE status = :status ", Label.class)
+                            .setParameter("status", Status.ACTIVE)
+                             .list();
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -24,7 +26,9 @@ public class LabelDao {
         Label label;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
-            label = (Label) session.createQuery("FROM Label WHERE id = " + label_id).list().get(0);
+            label = (Label) session.createQuery("FROM Label WHERE id = :id")
+                    .setParameter("id", label_id)
+                    .list().get(0);
         }
         if(label != null ){
             return label;

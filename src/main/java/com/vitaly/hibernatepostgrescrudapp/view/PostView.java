@@ -117,6 +117,7 @@ public class PostView extends AbstractView{
             postController.updatePost(post);
             System.out.println("Post updated: " + post);
         } catch (Exception e){
+            e.printStackTrace();
             System.out.println("Error while updating post");
         }
 

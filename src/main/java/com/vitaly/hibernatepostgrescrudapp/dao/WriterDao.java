@@ -16,7 +16,7 @@ public class WriterDao {
 
     public List<Writer> getWriters(){
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Writer w LEFT JOIN FETCH w.writerPosts WHERE status = :status ", Writer.class)
+            return session.createQuery("FROM Writer w LEFT JOIN FETCH w.writerPosts WHERE w.status = :status ", Writer.class)
                     .setParameter("status", Status.ACTIVE)
                     .list();
         } catch (Exception e){
@@ -28,7 +28,9 @@ public class WriterDao {
         Writer writer;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
-            writer = (Writer) session.createQuery("FROM Writer WHERE id =" + writerId).list().get(0);
+            writer = (Writer) session.createQuery("FROM Writer w LEFT JOIN FETCH w.writerPosts WHERE w.id = :id")
+                    .setParameter("id", writerId)
+                    .list().get(0);
         }
         if (writer != null){
             return writer;

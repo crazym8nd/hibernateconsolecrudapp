@@ -6,16 +6,18 @@ package com.vitaly.hibernatepostgrescrudapp.dao;
 import com.vitaly.hibernatepostgrescrudapp.model.Post;
 import com.vitaly.hibernatepostgrescrudapp.model.PostStatus;
 import com.vitaly.hibernatepostgrescrudapp.utils.HibernateUtil;
+import jakarta.transaction.Transactional;
+import org.hibernate.FetchMode;
 import org.hibernate.Session;
 
 import java.util.Collections;
 import java.util.List;
 
 public class PostDao {
-
+    @Transactional
     public List<Post> getPosts() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Post p LEFT JOIN FETCH p.postLabels WHERE postStatus = :status", Post.class)
+            return session.createQuery("FROM Post p LEFT JOIN FETCH p.postLabels WHERE p.postStatus = :status", Post.class)
                     .setParameter("status", PostStatus.ACTIVE)
                     .list();
         } catch (Exception e) {
@@ -27,7 +29,7 @@ public class PostDao {
         Post post;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
-            post = (Post) session.createQuery("FROM Post WHERE id = :id")
+            post = (Post) session.createQuery("FROM Post p LEFT JOIN FETCH p.postLabels WHERE p.id = :id")
                     .setParameter("id", postId)
                     .list().get(0);
         }
