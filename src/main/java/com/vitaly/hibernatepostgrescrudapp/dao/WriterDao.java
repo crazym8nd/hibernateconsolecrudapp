@@ -16,7 +16,7 @@ public class WriterDao {
 
     public List<Writer> getWriters(){
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Writer WHERE status = " + Status.ACTIVE, Writer.class).list();
+            return session.createQuery("FROM Writer w LEFT JOIN FETCH w.writerPosts WHERE status = " + Status.ACTIVE, Writer.class).list();
         } catch (Exception e){
             return Collections.emptyList();
         }

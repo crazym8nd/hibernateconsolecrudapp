@@ -25,7 +25,7 @@ public class Writer {
     @Column(name = "last_name")
     private String lastName;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "writer_posts",
             joinColumns = @JoinColumn(name = "writer_id"),
             inverseJoinColumns = @JoinColumn(name = "post_id"))

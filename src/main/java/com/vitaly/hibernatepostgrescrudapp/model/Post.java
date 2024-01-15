@@ -34,7 +34,7 @@ public class Post {
     @NonNull
     private PostStatus postStatus;
 
-   @ManyToMany(fetch = FetchType.EAGER)
+   @ManyToMany(fetch = FetchType.LAZY)
    @JoinTable(name ="post_labels",
               joinColumns = @JoinColumn(name = "post_id"),
               inverseJoinColumns = @JoinColumn(name = "label_id"))
